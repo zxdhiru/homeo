@@ -94,17 +94,31 @@ body {
 }
 
 .card-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
 }
-
+@media screen and (max-width: 1200px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 870px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 600px) {
+    .card-container {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: auto;
+    }
+}
 .card {
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
     text-align: center;
     padding: 20px;
     transition: transform 0.3s ease;
